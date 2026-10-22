@@ -1,0 +1,29 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "apple-equity-valuation"
+version = "0.1.0"
+description = "Bottom-up DCF, scenario and sensitivity analysis, trading comps and capital allocation analysis of Apple Inc."
+readme = "README.md"
+license = { text = "MIT" }
+requires-python = ">=3.11"
+authors = [{ name = "Spruha Nimkar" }]
+dependencies = ["numpy>=1.24", "pandas>=2.0", "yfinance>=0.2.40", "matplotlib>=3.7", "openpyxl>=3.1"]
+
+[project.optional-dependencies]
+dev = ["pytest>=7.4"]
+
+[project.scripts]
+aaplval = "aaplval.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.setuptools.package-data]
+aaplval = ["assumptions.toml"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-q"

@@ -1,0 +1,190 @@
+{
+  "valuation_date": "2025-05-16",
+  "price": 211.25999450683594,
+  "intrinsic_value_blended": 170.2058572285644,
+  "intrinsic_value_perpetuity": 143.12044133941473,
+  "intrinsic_value_exit": 197.2912731177141,
+  "price_vs_intrinsic": 0.24120284663964964,
+  "scenarios": {
+    "bear": 124.58994080750162,
+    "base": 170.2058572285644,
+    "bull": 229.39576837645308
+  },
+  "wacc": {
+    "risk_free": 0.04440999984741211,
+    "beta": 1.0484149349988061,
+    "equity_risk_premium": 0.045,
+    "cost_of_equity": 0.0915886719223584,
+    "pre_tax_cost_of_debt": 0.05040999984741211,
+    "tax_rate": 0.21,
+    "after_tax_cost_of_debt": 0.03982389987945557,
+    "equity_value": 3193572127321.0146,
+    "debt_value": 106629000000.0,
+    "weight_equity": 0.9676901510282927,
+    "weight_debt": 0.03230984897170725,
+    "wacc": 0.08991615995559735
+  },
+  "beta": {
+    "raw": 1.0722610970131434,
+    "adjusted": 1.0484149349988061,
+    "r_squared": 0.3969057913677456,
+    "std_error": 0.13087277907898043,
+    "n_obs": 104,
+    "start": "2023-05-26",
+    "end": "2025-05-16",
+    "frequency": "weekly"
+  },
+  "terminal": {
+    "perpetuity_growth": 0.03,
+    "exit_ev_ebitda": 20.0,
+    "implied_exit_multiple": 13.231137202188812,
+    "implied_perpetuity_growth": 0.04952675647880475
+  },
+  "tornado": [
+    {
+      "driver": "WACC (+/-1.0pp)",
+      "low": 156.2802397518514,
+      "high": 188.36985904609864,
+      "swing": 32.08961929424723,
+      "swing_pct_of_base": 0.18853416572588938
+    },
+    {
+      "driver": "Revenue growth (+/-2pp a year)",
+      "low": 155.8582760709407,
+      "high": 185.65004380818314,
+      "swing": 29.791767737242452,
+      "swing_pct_of_base": 0.17503373986264156
+    },
+    {
+      "driver": "Exit EV/EBITDA (+/-3x)",
+      "low": 158.20144081555566,
+      "high": 182.21027364157317,
+      "swing": 24.00883282601751,
+      "swing_pct_of_base": 0.1410576182097938
+    },
+    {
+      "driver": "EBIT margin (+/-2pp)",
+      "low": 160.2830785740105,
+      "high": 180.12863588311836,
+      "swing": 19.845557309107875,
+      "swing_pct_of_base": 0.11659738173673931
+    },
+    {
+      "driver": "Terminal growth (+/-0.5pp)",
+      "low": 165.89076562201691,
+      "high": 175.30670872983808,
+      "swing": 9.415943107821164,
+      "swing_pct_of_base": 0.05532091116686291
+    },
+    {
+      "driver": "Cash tax rate (+/-2pp)",
+      "low": 168.12556733499207,
+      "high": 172.28614712213675,
+      "swing": 4.160579787144684,
+      "swing_pct_of_base": 0.02444439841783802
+    },
+    {
+      "driver": "Capex intensity (+/-0.5pp of revenue)",
+      "low": 168.59252411293477,
+      "high": 171.8191903441941,
+      "swing": 3.226666231259344,
+      "swing_pct_of_base": 0.018957433567790498
+    }
+  ],
+  "comps": [
+    {
+      "ticker": "AAPL",
+      "fiscal_year": 2024,
+      "price": 211.25999450683594,
+      "market_cap": 3193572127321.0146,
+      "enterprise_value": 3235030127321.0146,
+      "ebitda": 134661000000.0,
+      "eps": 6.741989687888087,
+      "eps_growth": 0.05044528691408501,
+      "eps_growth_years": 2,
+      "ev_ebitda": 24.023511835802605,
+      "pe": 31.334962568448045,
+      "peg": 6.211672979839649,
+      "ebitda_margin": 0.3443707085043538,
+      "revenue_growth": 0.02021994077514111
+    },
+    {
+      "ticker": "MSFT",
+      "fiscal_year": 2024,
+      "price": 454.2699890136719,
+      "market_cap": 3377106177804.041,
+      "enterprise_value": 3368702177804.041,
+      "ebitda": 131680000000.0,
+      "eps": 11.8,
+      "eps_growth": 0.21900826446280997,
+      "eps_growth_years": 1,
+      "ev_ebitda": 25.582489199605416,
+      "pe": 38.49745669607388,
+      "peg": 1.7578084000848826,
+      "ebitda_margin": 0.5372018831439038,
+      "revenue_growth": 0.1566996201307127
+    },
+    {
+      "ticker": "META",
+      "fiscal_year": 2024,
+      "price": 640.3400268554688,
+      "market_cap": 1622933897549.934,
+      "enterprise_value": 1594178897549.934,
+      "ebitda": 86876000000.0,
+      "eps": 23.86,
+      "eps_growth": 0.6666278614031154,
+      "eps_growth_years": 2,
+      "ev_ebitda": 18.35004946763127,
+      "pe": 26.83738586988553,
+      "peg": 0.40258422162851576,
+      "ebitda_margin": 0.5281183701010936,
+      "revenue_growth": 0.21941112807816054
+    },
+    {
+      "ticker": "GOOGL",
+      "fiscal_year": 2024,
+      "price": 166.19000244140625,
+      "market_cap": 2029346119812.0117,
+      "enterprise_value": 1956263119812.0117,
+      "ebitda": 135394000000.0,
+      "eps": 8.04,
+      "eps_growth": 0.32783955910977514,
+      "eps_growth_years": 2,
+      "ev_ebitda": 14.448669215858986,
+      "pe": 20.670398313607745,
+      "peg": 0.6305034807189448,
+      "ebitda_margin": 0.3868201063945283,
+      "revenue_growth": 0.1386624332290156
+    },
+    {
+      "ticker": "AMZN",
+      "fiscal_year": 2024,
+      "price": 205.58999633789062,
+      "market_cap": 2177814831207.2754,
+      "enterprise_value": 2207512831207.2754,
+      "ebitda": 123815000000.0,
+      "eps": 5.53,
+      "eps_growth": 0.9068965517241381,
+      "eps_growth_years": 1,
+      "ev_ebitda": 17.829122733168642,
+      "pe": 37.177214527647486,
+      "peg": 0.4099388674151243,
+      "ebitda_margin": 0.194079870336495,
+      "revenue_growth": 0.1099089224666614
+    }
+  ],
+  "hindsight": {
+    "first_year": {
+      "fiscal_year": 2025,
+      "revenue_forecast": 408631575000.0,
+      "revenue_actual": 416161000000.0,
+      "ebit_margin_forecast": 0.316,
+      "ebit_margin_actual": 0.31970799762591884,
+      "fcff_forecast": 109927250854.5,
+      "reported_fcf_actual": 98767000000.0
+    },
+    "latest_price": 339.5,
+    "latest_price_date": "2026-10-20",
+    "return_since_valuation": 0.6070245613350826
+  }
+}

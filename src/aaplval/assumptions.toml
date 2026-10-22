@@ -1,0 +1,60 @@
+# Apple Inc. (AAPL) DCF valuation: every assumption the model uses.
+# Change a value here and re-run `aaplval run`; the report records which file was used.
+
+[valuation]
+ticker = "AAPL"
+valuation_date = "2025-05-16"   # two weeks after Q2 FY25 results; only data public by then is used
+base_fiscal_year = 2024          # last audited 10-K at the valuation date (FY ends late September)
+forecast_years = [2025, 2026, 2027, 2028, 2029]
+reporting_lag_days = 45          # a fiscal year counts as "known" this many days after it ends
+
+[market]
+risk_free = "auto"               # "auto" = 10-year US Treasury yield (^TNX) on the valuation date
+equity_risk_premium = 0.045      # within the 4-5% range of implied US ERP estimates in early 2025
+beta = "auto"                    # "auto" = 2y weekly regression vs S&P 500, Blume-adjusted; or a number
+beta_lookback_years = 2
+market_index = "^GSPC"
+pre_tax_cost_of_debt_spread = 0.006   # over the risk-free rate (Apple is rated AA+/Aaa)
+marginal_tax_rate = 0.21              # US federal rate for the interest tax shield
+
+# Operating forecast, one value per forecast year
+[forecast]
+revenue_growth = [0.045, 0.055, 0.055, 0.050, 0.045]   # normalising from +2% in FY24 toward a mature-platform rate
+ebit_margin = [0.316, 0.318, 0.320, 0.322, 0.324]      # services mix gives modest operating leverage
+cash_tax_rate = 0.165            # normalised (FY22-FY23 averaged ~16%; FY24 inflated by a one-off EU charge)
+da_pct_revenue = 0.029
+capex_pct_revenue = [0.026, 0.028, 0.029, 0.030, 0.030]  # rising AI / data-centre investment
+nwc_pct_incremental_revenue = -0.05   # Apple runs negative working capital: growth releases a little cash
+
+[terminal]
+perpetuity_growth = 0.030
+exit_ev_ebitda = 20.0            # below Apple's ~24x at the valuation date: a mature-platform multiple
+perpetuity_weight = 0.5          # headline value = weighted blend of the two terminal methods
+
+[adjustments]
+# FY24 diluted EPS included a one-off $10.2bn income tax charge (EU State Aid ruling).
+aapl_fy2024_one_off_tax_charge = 10.2e9
+
+[scenarios.bear]
+revenue_growth_shift = -0.025
+ebit_margin_shift = -0.020
+wacc_shift = 0.005
+perpetuity_growth = 0.025
+exit_ev_ebitda = 17.0
+
+[scenarios.bull]
+revenue_growth_shift = 0.020
+ebit_margin_shift = 0.015
+wacc_shift = -0.005
+perpetuity_growth = 0.035
+exit_ev_ebitda = 24.0
+
+[sensitivity]
+wacc_steps = [-0.015, -0.010, -0.005, 0.0, 0.005, 0.010, 0.015]
+perpetuity_growth = [0.020, 0.025, 0.030, 0.035, 0.040]
+exit_ev_ebitda = [16.0, 18.0, 20.0, 22.0, 24.0, 26.0]
+revenue_growth_shift = [-0.03, -0.02, -0.01, 0.0, 0.01, 0.02, 0.03]
+ebit_margin_shift = [-0.03, -0.02, -0.01, 0.0, 0.01, 0.02, 0.03]
+
+[comps]
+peers = ["MSFT", "META", "GOOGL", "AMZN"]
